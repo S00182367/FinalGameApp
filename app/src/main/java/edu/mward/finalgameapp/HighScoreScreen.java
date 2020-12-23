@@ -3,8 +3,10 @@ package edu.mward.finalgameapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -121,5 +123,12 @@ public class HighScoreScreen extends AppCompatActivity {
                 new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, scoresStr);
         listView.setAdapter(itemsAdapter);
 
+    }
+
+    public void doReturn(View view) {
+        Intent MainActivity = new Intent(view.getContext(), MainActivity.class);
+
+        //Starts new activity
+        startActivity(MainActivity);
     }
 }

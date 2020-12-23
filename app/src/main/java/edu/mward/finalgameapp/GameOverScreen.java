@@ -21,4 +21,11 @@ public class GameOverScreen extends AppCompatActivity {
             //Starts new activity
             startActivity(HighScoreScreenActivity);
         }
+
+    public void doReturn(View view) {
+        Intent MainActivity = new Intent(view.getContext(), MainActivity.class);
+
+        //Starts new activity
+        startActivity(MainActivity);
     }
+}
