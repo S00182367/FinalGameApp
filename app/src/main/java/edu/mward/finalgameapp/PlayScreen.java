@@ -9,6 +9,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -42,7 +43,7 @@ public class PlayScreen extends AppCompatActivity implements SensorEventListener
         tvx = findViewById(R.id.tvX);
         tvy = findViewById(R.id.tvY);
         tvz = findViewById(R.id.tvZ);
-       // tvSteps = findViewById(R.id.tvSteps);
+
         btnG = findViewById(R.id.btnGreen);
         btnR = findViewById(R.id.btnRed);
         btnB = findViewById(R.id.btnBlue);
@@ -139,9 +140,16 @@ public class PlayScreen extends AppCompatActivity implements SensorEventListener
         return (double) tmp / factor;
     }
 
-    public void onFinish() {
+    //public void onFinish() {
 
-        Intent i = new Intent(PlayScreen.this, GameOverScreen.class);
-        startActivity(i);
+        //Intent i = new Intent(PlayScreen.this, GameOverScreen.class);
+       // startActivity(i);
+    //}
+
+    public void doFinish(View view) {
+        Intent GameOverScreenActivity = new Intent(view.getContext(), GameOverScreen.class);
+
+        //Starts new activity
+        startActivity(GameOverScreenActivity);
     }
 }
